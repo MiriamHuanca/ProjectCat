@@ -3,44 +3,40 @@
   <div class="row">
     <div class="col-md-4 text-right">Raza</div>
     <div class="col-md-4">
-      <select class="form-control" id="raza">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+      <select #selectBreeds class="form-control" id="raza" (change)="onSelectBreeds(selectBreeds.value)">
+        <option *ngFor="let item of breeds" [value]="item.id">{{item.name}}</option>
       </select>
     </div>
   </div>
   <div class="row">
     <div class="col-md-4 text-right">Id:</div>
-    <div class="col-md-4"></div>
+    <div class="col-md-4">{{breedSelected?.id}}</div>
   </div>
   <div class="row">
     <div class="col-md-4 text-right">Nombre:</div>
-    <div class="col-md-4"></div>
+    <div class="col-md-4">{{breedSelected?.breeds[0]?.name}}</div>
   </div>
   <div class="row">
     <div class="col-md-4 text-right">Descripcion:</div>
-    <div class="col-md-4"></div>
+    <div class="col-md-4">{{breedSelected?.breeds[0]?.description}}</div>
   </div>
   <div class="row">
     <div class="col-md-4 text-right">Años de Vida:</div>
-    <div class="col-md-4"></div>
+    <div class="col-md-4">{{breedSelected?.breeds[0]?.life_span}}</div>
   </div>
   <div class="row">
     <div class="col-md-4 text-right">Origen:</div>
-    <div class="col-md-4"></div>
+    <div class="col-md-4">{{breedSelected?.breeds[0]?.origin}}</div>
   </div>
   <div class="row">
     <div class="col-md-4 text-right">Wiki:</div>
-    <div class="col-md-4"></div>
+    <a class="col-md-4">{{breedSelected?.breeds[0]?.wikipedia_url}}</a>
   </div>
   <div class="row">
     <div class="col-md-4 text-right">VetStreet:</div>
-    <div class="col-md-4"></div>
+    <a class="col-md-4">{{breedSelected?.breeds[0]?.vetstreet_url}}</a>
   </div>
 </div>
 <div class="col-md-4">
-  <img src="" alt="foto">
+  <img [src]="breedSelected?.url" style="width: 200px;">
 </div>

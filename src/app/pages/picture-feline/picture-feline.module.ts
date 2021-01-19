@@ -3,9 +3,10 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {PictureFelineComponent} from './picture-feline.component';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbCarouselModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
+import {PictureFelineService} from './picture-feline.service';
 
 const routes: Routes = [
   {path: '', component: PictureFelineComponent}
@@ -19,7 +20,13 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     FormsModule,
-    NgbModule
+    NgbModule,
+    NgbCarouselModule
+  ],
+  providers: [
+    PictureFelineService
   ]
 })
-export class PictureFelineModule {}
+
+export class PictureFelineModule {
+}

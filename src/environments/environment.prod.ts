@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  app: {
+    apiBaseUrl: 'https://api.thecatapi.com/v1/'
+  }
 };

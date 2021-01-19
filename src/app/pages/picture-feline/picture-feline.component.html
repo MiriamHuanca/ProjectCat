@@ -1,19 +1,38 @@
-<div class="col-md-12 text-center">
+<ngb-carousel *ngIf="images"
+              [showNavigationArrows]="false"
+              [showNavigationIndicators]="false"
+              style="width: 600px; background-color: gray;" #carousel>
 
-  <div class="col-md-4">
-    <ngb-carousel *ngIf="images" [showNavigationArrows]="true" [showNavigationIndicators]="true">
-      <ng-template ngbSlide *ngFor="let image of images">
-        <div class="picsum-img-wrapper">
-          <img [src]="image" alt="Random slide">
-        </div>
-        <div class="carousel-caption">
-          <h3>No mouse navigation</h3>
-          <p>This carousel hides navigation arrows and indicators.</p>
-        </div>
-      </ng-template>
-    </ngb-carousel>
+  <ng-container *ngFor="let image of images; let i = index">
+    <ng-template ngbSlide>
+      <div [id]="i">
+        <img [src]="image.url" style="width: 200px;">
+      </div>
+    </ng-template>
+  </ng-container>
 
-    <button class="btn btn-primary">Nuevas Fotos</button>
+</ngb-carousel>
+
+<div class="col-md-4">
+
+  <div style="display: flex; flex-direction: row;">
+
+    <button [disabled]="currentIndexImage === 0"
+            (click)="onPagination(0)"><<
+    </button>
+
+    <button [disabled]="currentIndexImage === 0"
+            (click)="onPagination(currentIndexImage - 1)"><
+    </button>
+
+    <button [disabled]="currentIndexImage === images.length - 1"
+            (click)="onPagination(currentIndexImage + 1)">>
+    </button>
+
+    <button [disabled]="currentIndexImage >= images.length - 1"
+            (click)="onPagination(images.length - 1)">>>
+    </button>
   </div>
 
+  <button class="btn btn-primary" (click)="onLoadMore()">Nuevas Fotos</button>
 </div>

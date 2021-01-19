@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {PagesComponent} from './pages.component';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
-import {HeaderComponent} from '../header/header.component';
+import {HeaderComponent} from '../core/layout/header/header.component';
 
 const routes: Routes = [
   {
@@ -33,4 +33,5 @@ const routes: Routes = [
   ]
 })
 
-export class PagesModule {}
+export class PagesModule {
+}

@@ -1,17 +1,45 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {NgbCarousel, NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
+import {PictureFelineService} from './picture-feline.service';
 
 @Component({
   selector: 'app-picture-feline',
-  templateUrl: './picture-feline.component.html',
-  styleUrls: ['./picture-feline.component.scss']
+  templateUrl: './picture-feline.component.html'
 })
+
 export class PictureFelineComponent implements OnInit {
-  images = ['http://1.bp.blogspot.com/-7DModTwPGpw/UGxbSBd6XNI/AAAAAAAAeWQ/MehoApHGu6U/s1600/1+paisajes.jpg',
-    'https://magddapast.files.wordpress.com/2013/12/paisaje-mc3a1gico.jpg',
-    'https://magddapast.files.wordpress.com/2013/12/paisajes-de-mar.jpg?w=1200&h='];
-  constructor() { }
+
+  images: any[] = [];
+  page = 0;
+  currentIndexImage = 0;
+
+  @ViewChild('carousel') carousel: NgbCarousel;
+
+
+  constructor(config: NgbCarouselConfig,
+              private pictureFelineService: PictureFelineService) {
+    config.interval = 10000;
+    config.wrap = false;
+    config.keyboard = false;
+    config.pauseOnHover = false;
+  }
 
   ngOnInit(): void {
+    this.pictureFelineService.getImages(this.page).subscribe(res => {
+      this.images = res;
+    });
+  }
+
+  onLoadMore(): void {
+    this.page++;
+    this.pictureFelineService.getImages(this.page).subscribe(res => {
+      this.images = this.images.concat(res);
+    });
+  }
+
+  onPagination(index: number): void {
+    this.currentIndexImage = index;
+    this.carousel.select('ngb-slide-' + this.currentIndexImage);
   }
 
 }
