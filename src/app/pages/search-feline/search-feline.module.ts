@@ -4,6 +4,7 @@ import {SearchFelineComponent} from './search-feline.component';
 import {SearchFelineService} from './search-feline.service';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
+import {SharedModule} from '../../shared/shared.module';
 
 const routes: Routes = [
   {path: '', component: SearchFelineComponent}
@@ -16,7 +17,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    SharedModule
   ],
   providers: [
     SearchFelineService

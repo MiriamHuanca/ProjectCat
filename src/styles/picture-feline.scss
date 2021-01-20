@@ -29,7 +29,6 @@
     background: transparent;
     border: none;
     &:disabled {
-      background: #b8b8b8;
       border-radius: 50%;
     }
   }
@@ -37,7 +36,6 @@
   @media (max-width: 576px) {
     .text-h1 {
       font-size: 24px !important;
-      background: red;
     }
     .carusel-feline {
       width: 90%;

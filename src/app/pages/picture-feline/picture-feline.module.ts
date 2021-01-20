@@ -7,6 +7,7 @@ import {NgbCarouselModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {PictureFelineService} from './picture-feline.service';
+import {SharedModule} from '../../shared/shared.module';
 
 const routes: Routes = [
   {path: '', component: PictureFelineComponent}
@@ -21,7 +22,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     FormsModule,
     NgbModule,
-    NgbCarouselModule
+    NgbCarouselModule,
+    SharedModule
   ],
   providers: [
     PictureFelineService
