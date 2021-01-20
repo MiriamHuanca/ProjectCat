@@ -42,6 +42,7 @@ export class SearchFelineComponent implements OnInit, OnDestroy {
 
   onSelectBreeds(value: any): void {
     this.isLoading = true;
+    this.breedSelected = null;
     this.subscription.push(
       this.searchFelineService.getBreedsById(value).subscribe(res => {
         this.breedSelected = res[0];
