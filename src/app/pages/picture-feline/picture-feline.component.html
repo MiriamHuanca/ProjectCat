@@ -1,57 +1,60 @@
-<div class="picture-feline row">
-  <div class="col-md-12">
-    <div class="col-md-4 col-sm-6 col-xs-12 text-center">
-      <img src="assets/image/Logo_DazaSoftware.png" class="img-logo" alt="Logo de empresa">
+<div class="picture-feline col-md-12">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+        <img src="assets/image/Logo_DazaSoftware.png" class="img-logo" alt="Logo de empresa">
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12 text-center pt-3">
+        <h1 class="text-h1">{{title}}</h1>
+      </div>
     </div>
-    <div class="col-md-4 col-sm-6 col-xs-12 text-center pt-3">
-      <h1 class="text-h1">{{title}}</h1>
+    <div class="col-md-12 mt-3 text-center">
+      <ngb-carousel *ngIf="images"
+                    [showNavigationArrows]="false"
+                    [showNavigationIndicators]="false"
+                    [pauseOnHover]="true"
+                    class="carusel-feline"
+                    #carousel>
+
+        <ng-container *ngFor="let image of images; let i = index">
+          <ng-template ngbSlide>
+            <div [id]="i">
+              <img [src]="image.url" class="img-picture">
+            </div>
+          </ng-template>
+        </ng-container>
+      </ngb-carousel>
+
+      <div class="btn-carousel">
+
+        <button [disabled]="currentIndexImage === 0"
+                (click)="onPagination(0)"
+                class="btn-ca m-2">
+          <img src="assets/image/primero.jpg" alt="icon" class="icon">
+        </button>
+
+        <button [disabled]="currentIndexImage === 0"
+                (click)="onPagination(currentIndexImage - 1)"
+                class="btn-ca m-2">
+          <img src="assets/image/anterior.jpg" alt="icon" class="icon">
+        </button>
+
+        <button [disabled]="currentIndexImage === images.length - 1"
+                (click)="onPagination(currentIndexImage + 1)"
+                class="btn-ca m-2">
+          <img src="assets/image/siguiente.jpg" alt="icon" class="icon">
+        </button>
+
+        <button [disabled]="currentIndexImage >= images.length - 1"
+                (click)="onPagination(images.length - 1)"
+                class="btn-ca m-2">
+          <img src="assets/image/ultimo.jpg" alt="icon" class="icon">
+        </button>
+      </div>
+
+      <button class="btn btn-primary" (click)="onLoadMore()">Nuevas Fotos</button>
+
     </div>
   </div>
-  <div class="col-md-12 mt-3 text-center">
-    <ngb-carousel *ngIf="images"
-                  [showNavigationArrows]="false"
-                  [showNavigationIndicators]="false"
-                  [pauseOnHover]="true"
-                  class="carusel-feline"
-                  #carousel>
 
-      <ng-container *ngFor="let image of images; let i = index">
-        <ng-template ngbSlide>
-          <div [id]="i">
-            <img [src]="image.url" class="img-picture">
-          </div>
-        </ng-template>
-      </ng-container>
-    </ngb-carousel>
-
-    <div class="btn-carousel">
-
-      <button [disabled]="currentIndexImage === 0"
-              (click)="onPagination(0)"
-              class="btn-ca m-2">
-        <img src="assets/image/primero.jpg" alt="icon" class="icon">
-      </button>
-
-      <button [disabled]="currentIndexImage === 0"
-              (click)="onPagination(currentIndexImage - 1)"
-              class="btn-ca m-2">
-        <img src="assets/image/anterior.jpg" alt="icon" class="icon">
-      </button>
-
-      <button [disabled]="currentIndexImage === images.length - 1"
-              (click)="onPagination(currentIndexImage + 1)"
-              class="btn-ca m-2">
-        <img src="assets/image/siguiente.jpg" alt="icon" class="icon">
-      </button>
-
-      <button [disabled]="currentIndexImage >= images.length - 1"
-              (click)="onPagination(images.length - 1)"
-              class="btn-ca m-2">
-        <img src="assets/image/ultimo.jpg" alt="icon" class="icon">
-      </button>
-    </div>
-
-    <button class="btn btn-primary" (click)="onLoadMore()">Nuevas Fotos</button>
-
-  </div>
 </div>
