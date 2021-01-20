@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {NgbCarousel, NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
+import {NgbCarousel} from '@ng-bootstrap/ng-bootstrap';
 import {PictureFelineService} from './picture-feline.service';
 
 @Component({
@@ -16,18 +16,11 @@ export class PictureFelineComponent implements OnInit {
   @ViewChild('carousel') carousel: NgbCarousel;
 
 
-  constructor(config: NgbCarouselConfig,
-              private pictureFelineService: PictureFelineService) {
-    config.interval = 10000;
-    config.wrap = false;
-    config.keyboard = false;
-    config.pauseOnHover = false;
+  constructor(private pictureFelineService: PictureFelineService) {
   }
 
   ngOnInit(): void {
-    this.pictureFelineService.getImages(this.page).subscribe(res => {
-      this.images = res;
-    });
+    this.pictureFelineService.getImages(this.page).subscribe(res => this.images = res);
   }
 
   onLoadMore(): void {
