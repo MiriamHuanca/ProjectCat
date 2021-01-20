@@ -8,3 +8,11 @@ html, body {
   height: 100%;
   overflow: hidden;
 }
+
+.col-flex-just {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
