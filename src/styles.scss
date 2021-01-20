@@ -3,3 +3,8 @@
 @import "./styles/header";
 @import "styles/picture-feline";
 @import "./styles/search-feline";
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
