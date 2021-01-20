@@ -1,10 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {SearchFelineService} from './search-feline.service';
 import {Subscription} from 'rxjs';
-import {ToastrService} from "ngx-toastr";
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
-  selector: 'app-search-feline',
   templateUrl: './search-feline.component.html'
 })
 export class SearchFelineComponent implements OnInit, OnDestroy {
