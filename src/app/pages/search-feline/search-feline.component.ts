@@ -6,7 +6,7 @@ import {SearchFelineService} from './search-feline.service';
   templateUrl: './search-feline.component.html'
 })
 export class SearchFelineComponent implements OnInit {
-
+  title: string;
   breeds: any[];
   breedSelected: any;
 
@@ -15,6 +15,7 @@ export class SearchFelineComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.title = 'Buscador de Felinos';
     this.searchFelineService.getAllBreeds().subscribe(res => {
       this.breeds = res;
 

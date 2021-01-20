@@ -8,7 +8,7 @@ import {PictureFelineService} from './picture-feline.service';
 })
 
 export class PictureFelineComponent implements OnInit {
-
+  title: string;
   images: any[] = [];
   page = 0;
   currentIndexImage = 0;
@@ -20,6 +20,7 @@ export class PictureFelineComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.title = '18 Fotos Felinas';
     this.pictureFelineService.getImages(this.page).subscribe(res => this.images = res);
   }
 

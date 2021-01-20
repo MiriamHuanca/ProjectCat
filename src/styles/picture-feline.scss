@@ -1,3 +1,60 @@
 .picture-feline {
+  .img-logo {
+    width: 80%;
+  }
 
+  .carusel-feline {
+    width: 500px;
+    height: 250px;
+    background-color: gray;
+    margin: 10px auto !important;
+  }
+
+  .img-picture {
+    width: 500px;
+    height: 250px;
+  }
+
+  .btn-carousel {
+    margin: 15px;
+  }
+
+  .icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+
+  .btn-ca {
+    background: transparent;
+    border: none;
+    &:disabled {
+      background: #b8b8b8;
+      border-radius: 50%;
+    }
+  }
+
+  @media (min-width: 576px) {
+    .text-h1 {
+      font-size: 24px !important;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .text-h1 {
+      font-size: 26px !important;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .text-h1 {
+      font-size: 28px !important;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .text-h1 {
+      font-size: 32px !important;
+    }
+  }
 }

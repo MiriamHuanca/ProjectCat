@@ -1,3 +1,32 @@
 .search-feline {
+  .img-logo {
+    width: 80%;
+  }
+  .img-search {
+    margin-top: 10px;
+    width: 95%;
+  }
+  @media (min-width: 576px) {
+    .text-h1{
+      font-size: 24px!important;
+    }
+  }
 
+  @media (min-width: 768px) {
+    .text-h1{
+      font-size: 26px!important;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .text-h1{
+      font-size: 28px!important;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .text-h1{
+      font-size: 32px!important;
+    }
+  }
 }

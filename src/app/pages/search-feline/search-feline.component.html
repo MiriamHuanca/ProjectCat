@@ -1,42 +1,53 @@
 <script src="../../app.component.ts"></script>
-<div class="col-md-8">
-  <div class="row">
-    <div class="col-md-4 text-right">Raza</div>
-    <div class="col-md-4">
-      <select #selectBreeds class="form-control" id="raza" (change)="onSelectBreeds(selectBreeds.value)">
-        <option *ngFor="let item of breeds" [value]="item.id">{{item.name}}</option>
-      </select>
+<div class="search-feline">
+  <div class="col-md-12">
+    <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+      <img src="assets/image/Logo_DazaSoftware.png" class="img-logo" alt="Logo de empresa">
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12 text-center pt-3">
+      <h1 class="text-h1">{{title}}</h1>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-4 text-right">Id:</div>
-    <div class="col-md-4">{{breedSelected?.id}}</div>
+
+  <div class="col-md-8 col-xs-12 p-5">
+    <div class="row">
+      <div class="col-md-4 text-right fw-bold">Raza</div>
+      <div class="col-md-4">
+        <select #selectBreeds class="form-control" id="raza" (change)="onSelectBreeds(selectBreeds.value)">
+          <option *ngFor="let item of breeds" [value]="item.id">{{item.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 text-right fw-bold">Id:</div>
+      <div class="col-md-4">{{breedSelected?.id}}</div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 text-right fw-bold">Nombre:</div>
+      <div class="col-md-4">{{breedSelected?.breeds[0]?.name}}</div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 text-right fw-bold">Descripcion:</div>
+      <div class="col-md-4">{{breedSelected?.breeds[0]?.description}}</div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 text-right fw-bold">Años de Vida:</div>
+      <div class="col-md-4">{{breedSelected?.breeds[0]?.life_span}}</div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 text-right fw-bold">Origen:</div>
+      <div class="col-md-4">{{breedSelected?.breeds[0]?.origin}}</div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 text-right fw-bold">Wiki:</div>
+      <a class="col-md-4">{{breedSelected?.breeds[0]?.wikipedia_url}}</a>
+    </div>
+    <div class="row">
+      <div class="col-md-4 text-right fw-bold">VetStreet:</div>
+      <a class="col-md-4">{{breedSelected?.breeds[0]?.vetstreet_url}}</a>
+    </div>
   </div>
-  <div class="row">
-    <div class="col-md-4 text-right">Nombre:</div>
-    <div class="col-md-4">{{breedSelected?.breeds[0]?.name}}</div>
+  <div class="col-md-4 col-xs-12 text-center">
+    <img [src]="breedSelected?.url" class="img-search">
   </div>
-  <div class="row">
-    <div class="col-md-4 text-right">Descripcion:</div>
-    <div class="col-md-4">{{breedSelected?.breeds[0]?.description}}</div>
-  </div>
-  <div class="row">
-    <div class="col-md-4 text-right">Años de Vida:</div>
-    <div class="col-md-4">{{breedSelected?.breeds[0]?.life_span}}</div>
-  </div>
-  <div class="row">
-    <div class="col-md-4 text-right">Origen:</div>
-    <div class="col-md-4">{{breedSelected?.breeds[0]?.origin}}</div>
-  </div>
-  <div class="row">
-    <div class="col-md-4 text-right">Wiki:</div>
-    <a class="col-md-4">{{breedSelected?.breeds[0]?.wikipedia_url}}</a>
-  </div>
-  <div class="row">
-    <div class="col-md-4 text-right">VetStreet:</div>
-    <a class="col-md-4">{{breedSelected?.breeds[0]?.vetstreet_url}}</a>
-  </div>
-</div>
-<div class="col-md-4">
-  <img [src]="breedSelected?.url" style="width: 200px;">
 </div>
