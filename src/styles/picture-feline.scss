@@ -30,6 +30,7 @@
     border: none;
     &:disabled {
       border-radius: 50%;
+      opacity: 0.5;
     }
   }
 

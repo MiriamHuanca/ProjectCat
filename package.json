@@ -28,6 +28,8 @@
     "jquery": "^3.3.1",
     "popper.js": "^1.14.6",
 
+    "ngx-toastr": "^13.2.0",
+
     "@angular/localize": "~10.1.0",
     "@ng-bootstrap/ng-bootstrap": "^8.0.2"
   },
