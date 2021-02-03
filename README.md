@@ -1,27 +1,79 @@
-# ProjectCat
+<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
+<h1 align="center">
+  Cat Project
+</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.7.
+This project is cat project to help you see a cat breeds guide.
 
-## Development server
+The application must consume a REST Service with information on Cat Breeds and display two pages with the following functionalities:
+- Cat Finder: Displays information on the selected Breed in a “Combo Box”.
+- 18 Feline Photos: Displays a photo of a feline and allows you to browse among 18 other photos from that list, it also includes an option to upload 18 new photos at random.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## 🚀 Quick start
 
-## Code scaffolding
+1.  **Create a new project in Angular.**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    Use the Angular CLI to create a site.
 
-## Build
+    ```shell
+    # create a Angular project cloned from here
+    git clone https://github.com/MiriamHuanca/ProjectCat.git
+    ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+1.  **Start dependencies.**
 
-## Running unit tests
+    To install dependencies in the application, on the console type...
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    ```shell
+    cd ProjectCat/
+    npm install
+    ```
 
-## Running end-to-end tests
+1.  **Start developing.**
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+    Navigate into your new site’s directory and start it up.
 
-## Further help
+    ```shell
+    ng serve
+    ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    Your site is now running at `http://localhost:4200`!
+
+1.  **Build**
+
+    Run ng build to build the project. The build artifacts will be stored in the dist/ directory. Use the --prod flag for a production build.
+
+    ```shell
+    ng build --prod
+    ```
+
+1.  **Install firebase**
+
+    To install Firebase in the application, on the console type...
+
+    ```shell
+    npm install -g firebase-tools
+    ```
+
+## 🧐 What's inside?
+
+## 🎓 Learning
+
+Looking for more guidance? Full documentation for Angular lives [on the website](https://angular.io/). Here are some places to start:
+
+- **To dive straight into code samples, head [to our documentation](https://angular.io/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+
+## 💫 Deploy
+
+[![Deploy with firebase hosting](https://zeit.co/button)](https://cat-project-5972f.web.app/)
+
+## An overview to the project
+
+- The first image is the cat breed listing and search according to race.
+  ![first view](src/assets/image/1SP.png)
+- The second is when you have to new search found.
+  ![second view](src/assets/image/2SD.png)
+- Ther third shows you the image you have chosen randomly.
+  ![third view](src/assets/image/3RD.png)
+
+<!-- AUTO-GENERATED-CONTENT:END -->
